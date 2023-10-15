@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Code/ManyCubesTest/Configs/ManyCubesDemoConfig.cs" type="Script" id=1]
+[ext_resource path="res://Code/Bootstrap/LeoEcsBootstrap.cs" type="Script" id=2]
+[ext_resource path="res://Content/Cube/Cube.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Code/UI/FpsCounter.cs" type="Script" id=4]
+
+[node name="Main" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="ManyCubesDemoConfig" type="Node" parent="."]
+script = ExtResource( 1 )
+NumberOfEntities = 5000
+CubePrefab = ExtResource( 3 )
+MinRotationSpeed = 0.5
+MaxRotationSpeed = 1.0
+OrbitingSpeed = 0.1
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100 )
+far = 200.0
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.463714, 0.885985, 0, -0.885985, 0.463714, 0, 9.6174, 13.4475 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+margin_right = 14.0
+margin_bottom = 14.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 59.0
+margin_bottom = 21.0
+
+[node name="FpsLabel" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer"]
+margin_right = 26.0
+margin_bottom = 14.0
+text = "FPS:"
+
+[node name="FpsAmountLabel" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer"]
+margin_left = 30.0
+margin_right = 52.0
+margin_bottom = 14.0
+text = "FPS"
+script = ExtResource( 4 )
