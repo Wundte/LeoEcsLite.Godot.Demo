@@ -1,5 +1,3 @@
-#define LEOECSLITE_DI
-
 using Godot;
 using LeoEcsIntegrationPrototype.Code.ManyCubesTest.Configs;
 using LeoEcsIntegrationPrototype.Code.ManyCubesTest.Systems;

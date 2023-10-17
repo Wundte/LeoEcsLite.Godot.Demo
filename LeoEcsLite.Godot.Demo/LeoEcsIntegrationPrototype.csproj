@@ -1,6 +1,9 @@
-<Project Sdk="Godot.NET.Sdk/3.3.0">
+<Project Sdk="Godot.NET.Sdk/3.3.0"> 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
+  </PropertyGroup> 
+  <PropertyGroup>
+    <DefineConstants> LEOECSLITE_DI; </DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Scenes\" />
